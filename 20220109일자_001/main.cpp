@@ -239,10 +239,11 @@ void TestCode9()
 
 }
 
-
+// https://github.com/magotoolivesource/SBS20211201_Proj
 
 void SelectSort()
 {
+
 	int data[] = { 7, 3, 9, 5, 1 };
 	int i, j;
 	int index, temp;
@@ -272,11 +273,157 @@ void SelectSort()
 }
 
 
+#define ARRAYZ 5
+#define ARRAYY 4
+#define ARRAYX 3
+void TestCode10()
+{
+	int arr5[][3] = {
+		  {1, 2}    // 1, 2, 0
+		, {4}		// 4, 0, 0
+		, {}		// 0, 0, 0
+	};
+
+	int arr4[3][4][5] = { };
+	for (int x = 0; x < ARRAYX; ++x)
+	{
+		for (int y = 0; y < ARRAYY; y++)
+		{
+			for (int  z = 0; z < ARRAYZ; z++)
+			{
+				arr4[x][y][z] = -1;
+			}
+		}
+	}
+
+
+
+	int arr3[3][4][5] = {
+		{
+			{1, 2, 3, 4, 5}
+			, {1, 2, 3, 4, 5}
+			, {1, 2, 3, 4, 5}
+			, {1, 2, 3, 4, 5}
+		}
+		,{
+			{1, 2, 3, 4, 5}
+			, { 1, 2, 3, 4, 5 }
+			, { 1, 2, 3, 4, 5 }
+			, { 1, 2, 3, 4, 5 }
+		}
+		,{
+			{1, 2, 3, 4, 5}
+			, { 1, 2, 3, 4, 5 }
+			, { 1, 2, 3, 4, 5 }
+			, { 1, 2, 3, 4, 5 }
+		}
+	};
+	
+
+	int arr2[3][5] = {
+		  { 1, 2, 3, 4, 5 }
+		, { 11, 12, 13, 14, 15 }
+		, { 21, 22, 23, 24, 25 }
+	};
+	arr2[1][4] = 17;
+
+
+	// 2차원 배열
+	int arr[3][5];
+	arr[0][0] = 0;
+	arr[1][2] = 10;
+
+}
+
+
+void TestCode11_2( int p_data[], int p_arrsize )
+{
+	int arrsize = sizeof(p_data) / sizeof(p_data[0]);
+	printf("함수 배열사이즈값 : %d\n", arrsize);
+
+	int tempval = p_data[30];
+	p_data[30] = 10;
+
+
+}
+void TestCode11()
+{
+	int data[] = { 7, 3, 9, 5, 1 };
+
+	data[30] = 20;
+	int arrsize = sizeof(data) / sizeof(data[0]);
+	printf("배열사이즈값 : %d\n", arrsize);
+	TestCode11_2(data, arrsize);
+}
+
+void TestCode12()
+{
+	char chararr[] = { 'h', 'e', 'l', 'l', 'o'};
+	char char2[6] = "Hello";
+	char2[1] = 'l';
+
+
+
+}
+
+
+int PointerAdd(int p_src, int p_dest)
+{
+	p_src = 30;
+	return p_src + p_dest;
+}
+
+int PointerAdd2(int* p_src)
+{
+	*p_src = 50;
+}
+
+void PointerCode1()
+{
+	int src = 10;
+	int dest = 20;
+	PointerAdd(src, dest);
+
+	PointerAdd2( &src );
+
+
+	int a = 10;
+	int b = 20;
+	int c = a & b; // 
+
+
+	int val = 10;
+	int val2 = 20;
+	int* pval;
+
+	
+	//*pval = 40;
+
+	val = 20;
+	pval = &val;
+	//pval = pval + 1;
+
+	*pval = 30;
+
+	pval = &val2;
+	*pval = 50;
+
+
+
+}
+
+
 void main()
 {
-	SelectSort();
+	PointerCode1();
 
+	//TestCode12();
 
+	//TestCode11();
+
+	//TestCode10();
+
+	//SelectSort();
 
 	//TestCode9();
 
